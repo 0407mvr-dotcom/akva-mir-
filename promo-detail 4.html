@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Аква Мир — Акция</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+    <script src="script.js" defer></script>
+</head>
+<body class="promo-detail-page">
+
+     <!-- ===== МОБИЛЬНАЯ ВЕРСИЯ МЕНЮ ===== -->
+<div class="mobile-header">
+    <div class="mobile-header__wrapper">
+        <div class="burger" id="burger">
+            <img src="images/burger.svg" alt="Меню">
+        </div>
+        <div class="mobile-logo">
+            <a href="index.html"><img src="images/logo.svg" alt="Логотип"></a>
+        </div>
+        <div class="mobile-icons">
+            <a href="tel:84832773773" class="mobile-icon">
+                <img src="images/phone.svg" alt="Телефон">
+            </a>
+            <a href="javascript:void(0)" class="mobile-icon" id="searchToggle">
+                <img src="images/search.svg" alt="Поиск">
+            </a>
+            <a href="javascript:void(0)" class="mobile-icon" onclick="openModal('loginModal')">
+                <img src="images/user.svg" alt="Войти">
+            </a>
+        </div>
+    </div>
+
+    <!-- МОБИЛЬНЫЙ ПОИСК -->
+    <div class="mobile-search" id="mobileSearch">
+        <div class="mobile-search__wrapper">
+            <input type="text" id="mobileSearchInput" placeholder="Поиск товаров..." autofocus>
+            <button class="mobile-search__close" id="mobileSearchClose">✕</button>
+        </div>
+        <div class="mobile-search__results" id="mobileSearchResults"></div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu__list">
+            <li><a href="index.html">Главная</a></li>
+            <li class="has-submenu">
+                <div class="mobile-menu__item-wrapper">
+                    <a href="about.html" class="mobile-menu__link">О компании</a>
+                    <span class="mobile-menu__arrow">▼</span>
+                </div>
+                <ul class="submenu">
+                    <li><a href="vacancies.html">Вакансии</a></li>
+                    <li><a href="production.html">Производство</a></li>
+                    <li><a href="https://yandex.ru/maps/org/akva_mir_ofis/1049687057/reviews/?ll=34.496591%2C53.246881&z=17" target="_blank">Отзывы</a></li>
+                    <li><a href="cooperation.html">Сотрудничество</a></li>
+                </ul>
+            </li>
+            <li><a href="promo.html">Акции</a></li>
+            <li class="has-submenu">
+                <div class="mobile-menu__item-wrapper">
+                    <a href="catalog.html" class="mobile-menu__link">Каталог</a>
+                    <span class="mobile-menu__arrow">▼</span>
+                </div>
+                <ul class="submenu">
+                    <li><a href="water.html">Вода</a></li>
+                    <li><a href="equipment.html">Оборудование</a></li>
+                    <li><a href="accessories.html">Доп. Продукция</a></li>
+                    <li><a href="gift-cards.html">Подарочные карты</a></li>
+                </ul>
+            </li>
+            <li><a href="pickup.html">Самовывоз</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="tel:84832773773" class="mobile-phone">8 (4832) 773-773</a></li>
+            <li><a href="javascript:void(0)" class="mobile-order-call" onclick="openModal('callModal')">Заказать звонок</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- ===== ДЕСКТОПНАЯ ВЕРСИЯ МЕНЮ ===== -->
+<header class="header desktop-header">
+    <div class="header__container">
+        <div class="header__menu-wrapper">
+            <div class="header__top">
+                <ul class="header__nav-links">
+                    <li><a href="app.html">Мобильное приложение</a></li>
+                    <li class="has-arrow has-dropdown">
+                        <a href="about.html">О компании</a>
+                        <div class="dropdown dropdown-company">
+                            <a href="vacancies.html" class="dropdown__item">Вакансии</a>
+                            <a href="production.html" class="dropdown__item">Производство</a>
+                            <a href="https://yandex.ru/maps/org/akva_mir_ofis/1049687057/reviews/?ll=34.496591%2C53.246881&z=17" class="dropdown__item" target="_blank">Отзывы</a>
+                            <a href="cooperation.html" class="dropdown__item">Сотрудничество</a>
+                        </div>
+                    </li>
+                    <li><a href="promo.html">Акции</a></li>
+                    <li class="has-arrow has-dropdown">
+                        <a href="catalog.html">Каталог</a>
+                        <div class="dropdown dropdown-catalog">
+                            <a href="water.html" class="dropdown__item">Вода</a>
+                            <a href="equipment.html" class="dropdown__item">Оборудование</a>
+                            <a href="accessories.html" class="dropdown__item">Доп. Продукция</a>
+                            <a href="gift-cards.html" class="dropdown__item">Подарочные карты</a>
+                        </div>
+                    </li>
+                    <!-- Скрываемые пункты (скрываются с 1100px) -->
+                    <li class="pickup-link"><a href="pickup.html">Самовывоз</a></li>
+                    <li class="contacts-link"><a href="contacts.html">Контакты</a></li>
+                    <!-- ТРИ ТОЧКИ (появляются с 1100px) -->
+                    <li class="menu-dots">
+                        <span class="dots-trigger">···</span>
+                        <div class="dots-submenu">
+                            <a href="contacts.html">Контакты</a>
+                            <a href="pickup.html">Самовывоз</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="header__contacts">
+                    <!-- ОБЕРТКА ДЛЯ ТЕЛЕФОНА С ТРЕУГОЛЬНИКОМ -->
+                    <div class="header__phone-wrapper">
+                        <a href="tel:84832773773" class="header__phone">8 (4832) 773-773</a>
+                        <span class="phone-arrow">▼</span>
+                        <!-- ВЫПАДАЮЩЕЕ ПОДМЕНЮ ТЕЛЕФОНА -->
+                        <div class="phone-dropdown">
+                            <div class="worktime-item"><strong>Пн - пт:</strong> 9:00 - 18:30</div>
+                            <div class="worktime-item"><strong>Сб:</strong> 9:00 - 16:00</div>
+                            <a href="javascript:void(0)" class="phone-call-btn" onclick="openModal('callModal')">Заказать звонок</a>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" class="header__order-call" onclick="openModal('callModal')">Заказать звонок</a>
+                </div>
+            </div>
+
+            <div class="header__bottom">
+                <div class="header__logo">
+                    <a href="index.html"><img src="images/logo.svg" alt="Логотип"></a>
+                </div>
+                <button class="header__catalog" onclick="location.href='catalog.html'">
+                    <img src="images/list 1.svg" alt="">
+                    Каталог
+                </button>
+                
+                <div class="header__search">
+                    <input type="text" id="desktopSearchInput" placeholder="Найти" autocomplete="off">
+                    <button class="header__search-btn" id="desktopSearchBtn">
+                        <img src="images/search.svg" alt="Поиск">
+                    </button>
+                    <div class="search-dropdown" id="searchDropdown">
+                        <div class="search-dropdown__list" id="searchResults"></div>
+                    </div>
+                </div>
+                
+                <div class="header__worktime">
+                    <span>Офис работает:</span>
+                    <span>Пн - пт: 9:00 - 18:30</span>
+                    <span>Сб: 9:00 - 16:00</span>
+                </div>
+                <div class="header__icons">
+                    <a href="javascript:void(0)" class="header__icon" onclick="openModal('loginModal')">
+                        <img src="images/user 2.svg" alt="Войти">
+                        <span>Войти</span>
+                    </a>
+                    <a href="cart.html" class="header__icon" style="position:relative;">
+                        <img src="images/cart.svg" alt="Корзина">
+                        <span>Корзина</span>
+                        <span class="cart-counter" style="display:none; position:absolute; top:-8px; right:-12px; background:#ff0000; color:white; font-size:10px; font-weight:700; width:18px; height:18px; border-radius:50%; display:none; align-items:center; justify-content:center; font-family:'Inter',sans-serif;">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    <!-- ===== КОНТЕНТ СТРАНИЦЫ АКЦИИ ===== -->
+    <div class="promo-detail-container-full">
+        
+        <!-- Хлебные крошки -->
+        <div class="page-breadcrumbs" id="breadcrumbs"></div>
+
+        <!-- Картинка акции -->
+        <div class="promo-detail-image-full">
+            <img src="images/acd 5.png" alt="Акция">
+        </div>
+
+        <!-- Иконки преимуществ -->
+        <div class="promo-advantages-wrapper">
+            <div class="promo-advantages-grid">
+                <div class="promo-advantage-card">
+                    <img src="images/o nas1.svg" alt="Личный оператор">
+                    <h3>Личный оператор</h3>
+                    <p>своевременно позвонит и напомнит Вам о заказе воды</p>
+                </div>
+                <div class="promo-advantage-card">
+                    <img src="images/o nas2.svg" alt="Удобная доставка">
+                    <h3>Удобная доставка</h3>
+                    <p>Бесплатная доставка От 2 бутылей домой или офис</p>
+                </div>
+                <div class="promo-advantage-card">
+                    <img src="images/o nas3.svg" alt="Сервисный центр">
+                    <h3>Сервисный центр</h3>
+                    <p>Ремонт и профилактика кулеров для розлива воды</p>
+                </div>
+                <div class="promo-advantage-card">
+                    <img src="images/o nas4.svg" alt="Собственное производство">
+                    <h3>Собственное производство</h3>
+                    <p>Мы лично отвечаем за качество воды</p>
+                </div>
+                <div class="promo-advantage-card">
+                    <img src="images/o nas5.svg" alt="Производственная лаборатория">
+                    <h3>Производственная лаборатория</h3>
+                    <p>Ежедневный контроль за качеством воды</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Текст акции -->
+        <div class="promo-detail-text">
+            <p>Авторизуйтесь на сайте или в приложении, добавьте покупки в корзину и введите промокод <strong>ПРИВЕТ</strong> в специальное поле при оформлении заказа.</p>
+            <p>Выбор из более чем 900 видов воды и 4000 различных товаров! Скидка действует на всё, за исключением товаров из разделов: «Кулеры для воды», «Помпы, Аксессуары» и «Бытовая техника».</p>
+            <p>* Скидки и акции не суммируются.<br>* Акция действует только для новых клиентов.</p>
+        </div>
+
+        <!-- ТОВАРЫ ПО АКЦИИ (СЛАЙДЕР) -->
+<div class="catalog-slider-wrapper">
+    <div class="catalog-slider-header">
+        <h2 class="promo-section-title" style="margin: 0;">Товары по акции</h2>
+        <div style="display:flex; align-items:center; gap:12px;">
+            <span class="catalog-slider-hint-label">листайте →</span>
+            <div class="catalog-slider-arrows">
+                <button class="slider-nav-btn slider-nav-btn--prev" data-slider="promoSlider">◀</button>
+                <button class="slider-nav-btn slider-nav-btn--next" data-slider="promoSlider">▶</button>
+            </div>
+        </div>
+    </div>
+    <div class="catalog-slider-track">
+        <div class="catalog-slider-container" id="promoSlider">
+            <!-- Карточки будут вставлены через JS -->
+        </div>
+    </div>
+    <div class="slider-hint">
+        <div class="progress-track">
+            <div class="progress-fill" id="progressFill_promoSlider"></div>
+        </div>
+    </div>
+</div>
+
+        <!-- Кнопка Каталог -->
+        <div class="promo-btn-wrapper">
+            <button class="promo-catalog-btn" onclick="location.href='catalog.html'">Каталог</button>
+        </div>
+
+        <!-- Слайдер акций -->
+        <h2 class="promo-section-title">Акции</h2>
+        <div class="promo-slider">
+            <div class="promo-slider__container">
+                <button class="promo-slider__arrow promo-slider__arrow--prev"></button>
+                <div class="promo-slider__slides" id="promoSliderSlides"></div>
+                <button class="promo-slider__arrow promo-slider__arrow--next"></button>
+            </div>
+        </div>
+    </div>
+
+  
+     <!-- ===== ПОДВАЛ ===== -->
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__col">
+            <a href="about.html" class="footer__title footer__title--bold">О компании</a>
+            <ul class="footer__links">
+                <li><a href="vacancies.html">Вакансии</a></li>
+                <li><a href="https://yandex.ru/maps/org/akva_mir_ofis/1049687057/reviews/?ll=34.496591%2C53.246881&z=17">Отзывы</a></li>
+                <li><a href="production.html">Производство</a></li>
+                <li><a href="water.html">Наша вода</a></li>
+                <li><a href="cooperation.html">Сотрудничество</a></li>
+            </ul>
+        </div>
+        <div class="footer__col">
+            <a href="contacts.html" class="footer__title">Контакты</a>
+            <ul class="footer__links">
+                <li><a href="pickup.html">Самовывоз</a></li>
+                <li><a href="promo.html">Акции</a></li>
+                <li><a href="sitemap.html">Карта сайта</a></li>
+            </ul>
+        </div>
+        <div class="footer__col">
+            <a href="catalog.html" class="footer__title">Каталог</a>
+            <ul class="footer__links">
+                <li><a href="water.html">Вода</a></li>
+                <li><a href="gift-cards.html">Подарочные карты</a></li>
+                <li><a href="accessories.html">Доп. Продукция</a></li>
+                <li><a href="equipment.html">Оборудование</a></li>
+            </ul>
+        </div>
+        <div class="footer__col footer__col--contacts">
+            <div class="footer__contacts">
+                <span class="footer__contacts-title">Контакты</span>
+                <a href="tel:84832773773" class="footer__phone">8 (4832) 773-773</a>
+                <a href="mailto:office@akwa-mir.ru" class="footer__email">office@akwa-mir.ru</a>
+                <p class="footer__address">г. Брянск, р.п. Б. Полпино,<br>пер. Октябрьский, д. 2В</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer__accordion-wrapper">
+        <div class="footer__accordion">
+            <div class="footer__accordion-header">
+                <a href="about.html" class="footer__accordion-title">О компании</a>
+                <span class="footer__accordion-arrow"></span>
+            </div>
+            <ul class="footer__accordion-body">
+                <li><a href="vacancies.html">Вакансии</a></li>
+                <li><a href="https://yandex.ru/maps/org/akva_mir_ofis/1049687057/reviews/?ll=34.496591%2C53.246881&z=17">Отзывы</a></li>
+                <li><a href="production.html">Производство</a></li>
+                <li><a href="water.html">Наша вода</a></li>
+                <li><a href="cooperation.html">Сотрудничество</a></li>
+            </ul>
+        </div>
+        <div class="footer__accordion">
+            <div class="footer__accordion-header">
+                <a href="catalog.html" class="footer__accordion-title">Каталог</a>
+                <span class="footer__accordion-arrow"></span>
+            </div>
+            <ul class="footer__accordion-body">
+                <li><a href="water.html">Вода</a></li>
+                <li><a href="gift-cards.html">Подарочные карты</a></li>
+                <li><a href="accessories.html">Доп. Продукция</a></li>
+                <li><a href="equipment.html">Оборудование</a></li>
+            </ul>
+        </div>
+        <div class="footer__accordion">
+            <div class="footer__accordion-header">
+                <a href="contacts.html" class="footer__accordion-title">Контакты</a>
+                <span class="footer__accordion-arrow"></span>
+            </div>
+            <ul class="footer__accordion-body">
+                <li><a href="pickup.html">Самовывоз</a></li>
+                <li><a href="promo.html">Акции</a></li>
+                <li><a href="sitemap.html">Карта сайта</a></li>
+                <li><a href="tel:84832773773">8 (4832) 773-773</a></li>
+                <li><a href="mailto:office@akwa-mir.ru">office@akwa-mir.ru</a></li>
+                <li><p>г. Брянск, р.п. Б. Полпино,<br>пер. Октябрьский, д. 2В</p></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer__socials">
+        <p class="footer__socials-title">Мы в соцсетях</p>
+        <div class="footer__socials-icons">
+            <!-- VK -->
+            <a href="#" class="social-icon social-icon--vk" aria-label="VK">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M21.927 5.785c.156-.523 0-.856-.703-.856h-2.328c-.59 0-.862.312-1.009.657 0 0-1.18 2.875-2.85 4.742-.54.542-.787.713-1.082.713-.148 0-.364-.17-.364-.693V5.785c0-.59-.168-.856-.656-.856h-3.656c-.374 0-.599.277-.599.54 0 .565.848.696.935 2.289v3.457c0 .757-.136.895-.433.895-.787 0-2.702-2.892-3.838-6.2-.222-.642-.446-.898-1.04-.898H1.753c-.673 0-.81.312-.81.657 0 .616.797 3.668 3.712 7.706 1.943 2.797 4.68 4.315 7.17 4.315 1.494 0 1.68-.337 1.68-.914v-2.109c0-.674.142-.808.616-.808.35 0 .949.17 2.35 1.479 1.596 1.595 1.858 2.309 2.756 2.309h2.328c.673 0 1.01-.337.815-1.002-.211-.662-1.017-1.62-2.073-2.757-.554-.657-1.385-1.366-1.636-1.72-.352-.455-.252-.656 0-1.061 0 0 2.89-4.07 3.188-5.45z"/>
+                </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="#" class="social-icon social-icon--inst" aria-label="Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+            </a>
+            <!-- Telegram -->
+            <a href="#" class="social-icon social-icon--tg" aria-label="Telegram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                </svg>
+            </a>
+            <!-- WhatsApp -->
+            <a href="#" class="social-icon social-icon--wa" aria-label="WhatsApp">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer__divider"></div>
+
+    <div class="footer__bottom">
+        <div class="footer__bottom-container">
+            <div class="footer__apps">
+                <a href="#"><img src="images/googleplay.jpg" alt="Google Play"></a>
+                <a href="#"><img src="images/appstore.jpg" alt="App Store"></a>
+                <a href="#"><img src="images/appgallery.jpg" alt="App Gallery"></a>
+                <a href="#"><img src="images/rustore.jpg" alt="RuStore"></a>
+            </div>
+            <img src="images/pay footer.png" alt="Способы оплаты" class="footer__payments">
+            <p class="footer__copyright">© 2026 Аква-мир</p>
+            <div class="footer__legal">
+                <a href="oferta.html">Оферта</a>
+                <a href="privacy.html">Конфиденциальность</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+   <!-- ===== НИЖНЕЕ ЗАКРЕПЛЁННОЕ МЕНЮ (МОБИЛЬНАЯ ВЕРСИЯ) ===== -->
+<div class="bottom-menu">
+    <div class="bottom-menu__wrapper">
+        <a href="index.html" class="bottom-menu__item">
+            <img src="images/house.svg" alt="Главная" class="bottom-menu__icon">
+            <span class="bottom-menu__label">Главная</span>
+        </a>
+        <a href="catalog.html" class="bottom-menu__item">
+            <img src="images/list 2.svg" alt="Каталог" class="bottom-menu__icon">
+            <span class="bottom-menu__label">Каталог</span>
+        </a>
+        <a href="cart.html" class="bottom-menu__item">
+            <img src="images/cart.svg" alt="Корзина" class="bottom-menu__icon">
+            <span class="bottom-menu__label">Корзина</span>
+            <span class="cart-counter" id="bottomCartCounter">0</span>
+        </a>
+        <a href="javascript:void(0)" class="bottom-menu__item" onclick="openModal('loginModal')">
+            <img src="images/user 2.svg" alt="Войти" class="bottom-menu__icon">
+            <span class="bottom-menu__label">Войти</span>
+        </a>
+        <a href="contacts.html" class="bottom-menu__item">
+            <img src="images/map 1.svg" alt="Контакты" class="bottom-menu__icon">
+            <span class="bottom-menu__label">Контакты</span>
+        </a>
+        <a href="app.html" class="bottom-menu__item">
+            <img src="images/smartphone 1.svg" alt="Приложение" class="bottom-menu__icon">
+            <span class="bottom-menu__label">Приложение</span>
+        </a>
+        <a href="promo.html" class="bottom-menu__item">
+            <img src="images/zap 1.svg" alt="Акции" class="bottom-menu__icon">
+            <span class="bottom-menu__label">Акции</span>
+        </a>
+    </div>
+    <!-- ИСКУССТВЕННАЯ ПОЛОСА ПРОКРУТКИ (всегда видна) -->
+    <div class="bottom-menu__scrollbar">
+        <div class="bottom-menu__scrollbar-track">
+            <div class="bottom-menu__scrollbar-thumb" id="bottomScrollThumb"></div>
+        </div>
+    </div>
+</div>
+   <!-- ===== ФОРМА ВХОДА / РЕГИСТРАЦИИ ===== -->
+    <div class="modal" id="loginModal">
+        <div class="modal__content">
+            <div class="modal__header">
+                <a href="index.html"><img src="images/logo.svg" alt="Логотип" class="modal__logo"></a>
+                <span class="modal__close" onclick="closeModal('loginModal')">&times;</span>
+            </div>
+            <h2 class="modal__title">Вход или регистрация</h2>
+            <p class="modal__description">
+                Укажите номер телефона, чтобы войти или зарегистрироваться, если у вас нет аккаунта. 
+                Код может прийти в Telegram или в СМС.
+            </p>
+            <form id="loginForm" onsubmit="sendCode(event)">
+                <div class="form-group">
+                    <input type="tel" id="phoneNumber" placeholder="Номер телефона" required>
+                </div>
+                <button type="submit" class="modal__btn">Выслать код</button>
+            </form>
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="agreePersonal"> 
+                    <span class="checkbox-custom"></span>
+                    Соглашаюсь на обработку персональных данных в соответствии с Политикой конфиденциальности
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="agreeNews"> 
+                    <span class="checkbox-custom"></span>
+                    Соглашаюсь получать новости и специальные предложения
+                </label>
+            </div>
+            <p class="modal__offer">
+                Нажимая на кнопку «Выслать код», вы принимаете условия <a href="oferta.html">оферты</a>
+            </p>
+            <div class="modal__alternative">
+                <span class="modal__alternative-line"></span>
+                <span class="modal__alternative-text">Войти через</span>
+                <span class="modal__alternative-line"></span>
+            </div>
+            <div class="modal__socials">
+                <a href="#" class="modal__social-link">Почта</a>
+                <a href="#" class="modal__social-link">Социальные сети</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ФОРМА ОБРАТНОЙ СВЯЗИ (ЗАКАЗАТЬ ЗВОНОК) ===== -->
+    <div class="modal" id="callModal">
+        <div class="modal__content">
+            <div class="modal__header">
+                <a href="index.html"><img src="images/logo.svg" alt="Логотип" class="modal__logo"></a>
+                <span class="modal__close" onclick="closeModal('callModal')">&times;</span>
+            </div>
+            
+            <h2 class="modal__title">Заказать звонок</h2>
+            
+            <p class="modal__description">
+                Представьтесь, мы вам перезвоним.
+            </p>
+            
+            <form id="callForm" onsubmit="submitCallForm(event)" novalidate>
+                <div class="form-group">
+                    <input type="text" id="callName" placeholder="Ваше имя" required>
+                    <span class="form-error" id="callNameError">Пожалуйста, введите ваше имя</span>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" id="callPhone" placeholder="+7 (___) ___-__-__" required>
+                    <span class="form-error" id="callPhoneError">Введите корректный номер телефона</span>
+                </div>
+                
+                <button type="submit" class="modal__btn">Отправить</button>
+            </form>
+            
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="callAgreePersonal"> 
+                    <span class="checkbox-custom"></span>
+                    Соглашаюсь на обработку персональных данных в соответствии с Политикой конфиденциальности 
+                </label>
+                <span class="form-error" id="callAgreeError">Подтвердите согласие на обработку данных</span>
+            </div>
+            
+            <div class="modal__success" id="callSuccess" style="display: none;">
+                <div class="modal__success-icon">✓</div>
+                <h3 class="modal__success-title">Заявка отправлена!</h3>
+                <p class="modal__success-text">Мы свяжемся с вами в ближайшее время</p>
+            </div>
+        </div>
+    </div>
+    <!-- ===== ПОП-АП ПРИ УХОДЕ С САЙТА ===== -->
+<div class="exit-popup" id="exitPopup">
+    <div class="exit-popup__overlay"></div>
+    <div class="exit-popup__content">
+        <button class="exit-popup__close" id="exitPopupClose">✕</button>
+        <div class="exit-popup__image">
+            <img src="images/ac2.png" alt="Специальное предложение">
+        </div>
+        <h2 class="exit-popup__title">Не уходите!</h2>
+        <p class="exit-popup__text">
+            У нас для вас есть специальное предложение!<br>
+            <strong>Скидка 20% на первый заказ</strong>
+        </p>
+        <a href="promo-detail.html" class="exit-popup__btn">Узнать подробнее</a>
+        <p class="exit-popup__note">Нажмите "✕" чтобы закрыть</p>
+    </div>
+</div>
+<script src="cart.js"></script>
+</body>
+</html>
